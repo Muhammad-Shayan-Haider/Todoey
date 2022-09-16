@@ -1,19 +1,14 @@
-![App Brewery Banner](https://github.com/londonappbrewery/Images/blob/master/AppBreweryBanner.png)
+For using searchBar, we need to create UISearchBar, then implement its delegate in the controller.
 
+- To Query Core Data, we have to use NSPredicate, used for querying data.
+    
+    ```
+    - let predicate = NSPredicate(format: "title CONTAINS %@", searchBar.text!)
+    ```
+    
 
-# Todoey ✓
-
-## Our Goal
-
-The objective of this tutorial is to understand how to save data in iOS. We'll look at various choices and learn to use UserDefaults, Core Data and Realm.
-
-
-## What you will create
-
-A todolist app to keep track of all your tasks.
-
-
->This is a companion project to The App Brewery's Complete iOS Development Bootcamp, check out the full course at [www.appbrewery.co](https://www.appbrewery.co/)
-
-![End Banner](https://github.com/londonappbrewery/Images/blob/master/readme-end-banner.png)
-
+```Swift
+let request: NSFetchRequest<Item> = Item.fetchRequest()
+request.predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
+request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+```
