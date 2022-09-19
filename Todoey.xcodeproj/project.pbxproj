@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -60,7 +60,6 @@
 				6D45EFA796BA3A382F4AB49D /* Pods-Todoey.debug.xcconfig */,
 				2486EB44D878A723D0C1152A /* Pods-Todoey.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -121,12 +120,12 @@
 			isa = PBXGroup;
 			children = (
 				EB2BE4F9239524DB00FB933B /* AppDelegate.swift */,
+				B6A2D8B728CF624100013959 /* Data Model */,
 				B6A2D8B828CF626800013959 /* Controllers */,
 				B6D54C7128CF62A800C4DBEA /* Views */,
 				B6D54C7228CF62C000C4DBEA /* Supporting Files */,
 				EB2BE507239524DC00FB933B /* Info.plist */,
 				B6A2D8B328CF43DB00013959 /* NavigationController.swift */,
-				B6A2D8B728CF624100013959 /* Data Model */,
 			);
 			path = Todoey;
 			sourceTree = "<group>";
