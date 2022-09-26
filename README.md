@@ -1,14 +1,2 @@
-For using searchBar, we need to create UISearchBar, then implement its delegate in the controller.
-
-- To Query Core Data, we have to use NSPredicate, used for querying data.
-    
-    ```
-    - let predicate = NSPredicate(format: "title CONTAINS %@", searchBar.text!)
-    ```
-    
-
-```Swift
-let request: NSFetchRequest<Item> = Item.fetchRequest()
-request.predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
-request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
-```
+This app demonstrates use of persistance storage in iOS using CoreData and Realm.
+![simulator_screenshot_FD2B70B8-2B02-45CC-9132-41008F0A5459](https://user-images.githubusercontent.com/60185211/192243426-56d913cb-c030-4225-bfd7-d801d8cd64c9.png)
