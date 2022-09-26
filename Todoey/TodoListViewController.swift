@@ -12,6 +12,7 @@ import ChameleonFramework
 
 class TodoListViewController: SwipeTableViewController {
     
+    @IBOutlet weak var searchBar: UISearchBar!
     var todoItems: Results<Item>?
     let realm = try! Realm()
     var selectedCategory: Category? {
@@ -23,6 +24,16 @@ class TodoListViewController: SwipeTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        title = selectedCategory?.name
+        navigationController?.navigationBar.barTintColor = UIColor(hexString: selectedCategory?.color ?? "")
+        navigationController?.navigationBar.tintColor = ContrastColorOf(UIColor(hexString: selectedCategory?.color ?? "") ?? .systemBlue, returnFlat: true)
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: ContrastColorOf(UIColor(hexString: selectedCategory?.color ?? "") ?? .systemBlue, returnFlat: true)]
+        searchBar.barTintColor = UIColor(hexString: selectedCategory?.color ?? "")
     }
     
     // MARK: - Tableview Datasource Methods
